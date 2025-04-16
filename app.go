@@ -9,6 +9,7 @@ import (
 	"github.com/DevKayoS/goMovies/src/api"
 )
 
+// rodar com OMDB_KEY=chave_api go run .
 func App() error {
 	apiKey := os.Getenv("OMDB_KEY")
 	slog.Info("🚀Server running in port: 8080🚀")
