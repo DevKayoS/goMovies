@@ -3,14 +3,16 @@ package main
 import (
 	"log/slog"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/DevKayoS/goMovies/src/api"
 )
 
 func App() error {
+	apiKey := os.Getenv("OMDB_KEY")
 	slog.Info("🚀Server running in port: 8080🚀")
-	handler := api.NewHandler()
+	handler := api.NewHandler(apiKey)
 
 	app := http.Server{
 		ReadTimeout:  10 * time.Second,
